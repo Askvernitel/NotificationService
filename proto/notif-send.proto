@@ -1,0 +1,15 @@
+
+syntax = "proto3";
+
+package notif;
+
+message NotifRequest {
+  string message = 1;
+  string action = 2;
+  string token = 3;
+}
+
+message NotifResponse { bool success = 1; }
+service TriggerNotif {
+  rpc Notif(NotifRequest) returns (NotifResponse) {}
+}
